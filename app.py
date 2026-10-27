@@ -5,23 +5,35 @@ from src.screen.home_screen import home_screen
 from src.screen.teacher_screen import teacher_screen
 from src.screen.student_screen import student_screen
 
+from src.components.dialog_auto_enroll import auto_enroll_dialog
+
 def main():
+    st.set_page_config(
+        page_title="SnapClass-Make Attendance Faster Using AI",
+        page_icon="https://i.ibb.co/YTYGn5qV/logo.png"
+    )
     if 'login_type' not in st.session_state:
-        st.session_state['login_type'] = None
+        st.session_state['login_type'] = None 
 
     match st.session_state['login_type']:
-        case 'teacher':
+        case 'Teacher':
             teacher_screen()
-        case 'student':
+        case 'Student':
             student_screen()
         case None:
             home_screen()
 
-    # st.markdown("""
 
-
-    # """,unsafe_allow_html=True)
-
+    join_code=st.query_params.get('join-code')
+    if join_code:
+        if st.session_state.login_type != 'Student':
+            st.session_state.login_type = 'Student'
+            st.rerun()
+        if st.session_state.get('is_logged_in') and st.session_state.get('user_role') == 'student':
+            auto_enroll_dialog(join_code)
+     # st.markdown("""
+     # """,unsafe_allow_html=True)
+     
 main()
 
 
