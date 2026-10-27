@@ -13,6 +13,7 @@ from src.components.dialog_attendance_results import attendance_result_dialog
 
 import numpy as np
 import pandas as pd
+
 from datetime import datetime
 from src.database.config import supabase
 
