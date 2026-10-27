@@ -53,7 +53,7 @@ def student_dashboard():
 
         stats_map[sid]['total'] +=1
 
-        if logs.get('is_present'):
+        if log.get('is_present'):
             stats_map[sid]['attended'] += 1
 
     cols = st.columns(2)
@@ -174,7 +174,7 @@ def student_screen():
                     else:
                         st.error('Couldnt capture your facial features for registration')
             else: 
-                    st.warning('Please enter your name!')
+                st.warning('Please enter your name!')
 
     footer_dashboard()
 
