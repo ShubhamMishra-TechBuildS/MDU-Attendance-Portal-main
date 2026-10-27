@@ -6,7 +6,7 @@ import io
 
 def share_subject_dialog(subject_name,subject_code):
     app_domain="mdu-attendance-snapclass-main.streamlit.app"
-    join_url = f"{app_domain}/7join-code={subject_code}"
+    join_url = f"{app_domain}/?join-code={subject_code}"
 
     st.header("Scan to Join")
 
