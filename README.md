@@ -7,7 +7,6 @@ SnapClass helps teachers manage subjects, enroll students and record attendance 
 ## 🚀 Key Features
 
 ### 👨‍🏫 Teacher Dashboard
-![Teacher Dashboard]("assets/dashboard.png")
 - Teacher authentication.
 - Create and manage subjects.
 - Manage enrolled students.
@@ -15,21 +14,19 @@ SnapClass helps teachers manage subjects, enroll students and record attendance 
 - View attendance records.
 
 ### 👨‍🎓 Student Dashboard
-![Student Dashboard](assets/dashboard-s.png)
 - Student access and authentication.
 - View enrolled subjects.
 - Join subjects using a unique join code.
 - Track attendance information.
 
 ### 🤖 AI-Powered Attendance
-![Attendance System](assets/photo-attendance.png)
+
 - Face embedding extraction and recognition.
 - Machine-learning-based face classification.
 - Voice embedding extraction and processing.
 - Automated attendance workflow.
 
 ### 🔗 Quick Enrollment
-![Student Enrollment](assets/enroll.png)
 - Generate subject-specific join links.
 - Share QR codes with students.
 - Allow students to enroll in subjects using a join code.
