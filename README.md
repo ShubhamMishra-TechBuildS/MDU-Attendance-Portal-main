@@ -71,6 +71,27 @@ SnapClass/
 - **Database Layer:** Supabase database operations and data management.
 - **Application Layer:** Authentication, navigation and attendance workflows.
 
+## 🏗️ System Architecture
+
+```mermaid
+flowchart TD
+    A[User] --> B[Streamlit Application]
+    B --> C[Teacher Dashboard]
+    B --> D[Student Dashboard]
+
+    C --> E[Face Attendance Pipeline]
+    C --> F[Voice Attendance Pipeline]
+
+    E --> G[Face Embeddings and ML Model]
+    F --> H[Voice Embeddings]
+
+    D --> I[Student Enrollment]
+    I --> J[Supabase Database]
+
+    G --> J
+    H --> J
+    J --> K[Attendance Records]
+
 ## ⚙️ Installation and Setup
 
 ### 1. Clone the repository
