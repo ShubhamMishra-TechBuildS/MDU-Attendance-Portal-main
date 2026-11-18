@@ -60,6 +60,9 @@ def student_dashboard():
     for i, sub_node in enumerate(subjects):
         sub = sub_node['subjects']
         sid = sub['subject_id']
+        sub_name = sub['name']
+        sub_code = sub['subject_code']
+        sub_section = sub['section']
 
         stats = stats_map.get(sid,{"total":0, "attended": 0} )
     
@@ -69,7 +72,7 @@ def student_dashboard():
                 type='tertiary',
                 width='stretch',
                 icon=':material/delete_forever:',
-                key=f"unenroll_{student_id}_{sid}_{i}"
+                key=f"unenroll_{student_id}_{subject_id}_{i}"
             ):
                 unenroll_student_to_subject(student_id, subject_id)
                 st.toast(f"Unenrolled from {subject_name} Successfully")
@@ -78,14 +81,14 @@ def student_dashboard():
         with cols[i % 2]:
 
             subject_card(
-                name = sub['name'],
-                code =sub['subject_code'],
-                section = sub['section'],
+                name=sub_name,
+                code=sub_code,
+                section=sub_section,
                 stats = [
                     ('\U0001F4DA','Total', stats['total']),
                     ('\u2705','Attended', stats['attended']),
                 ],
-                footer_callback=lambda: unenroll_button(sid, sub['name'])
+                footer_callback=lambda s_id=sid, s_name=sub_name: unenroll_button(s_id, s_name)
             )
 
     footer_dashboard()
