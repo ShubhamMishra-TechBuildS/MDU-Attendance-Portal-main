@@ -20,6 +20,7 @@ SnapClass helps teachers manage subjects, enroll students and record attendance 
 - Track attendance information.
 
 ### 🤖 AI-Powered Attendance
+
 - Face embedding extraction and recognition.
 - Machine-learning-based face classification.
 - Voice embedding extraction and processing.
